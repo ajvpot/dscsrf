@@ -1,6 +1,6 @@
 # DSCsrf  
   
-Very simple and (almost) transparent global CSRF filtering for Flask using the Double Submit technique outlined on OWASP at https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Double_Submit_Cookies.  
+Very simple and (almost) plug-and-play global CSRF filtering for Flask using the Double Submit technique outlined on OWASP at https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Double_Submit_Cookies.  
   
 How to use:  
   
