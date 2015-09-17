@@ -12,16 +12,14 @@ class Csrf(object):
 		self.app = None
 		self.paramName = paramName
 		self.cookieName = cookieName
-		self.global_csrf = global_csrf
 
 		if app is not None:
-			self.init_app(app, paramName, cookieName, global_csrf)
+			self.init_app(app, paramName, cookieName)
 
 	def init_app(self, app, paramName='dscsrf', cookieName='dscsrf'):
 		self.app = app
 		self.paramName = paramName
 		self.cookieName = cookieName
-		self.global_csrf = global_csrf
 
 		self.app.before_request(self.checkCSRFCookie)
 		self.app.after_request(self.setCSRFCookie)
