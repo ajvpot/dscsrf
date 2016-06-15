@@ -22,7 +22,6 @@ class Csrf(object):
 		self.cookieName = cookieName
 
 		self.app.before_request(self.checkCSRFCookie)
-		self.app.after_request(self.setCSRFCookie)
 		self.app.jinja_env.globals['csrf_token'] = self.csrf_token
 
 	def csrf_token(self):
@@ -30,6 +29,7 @@ class Csrf(object):
 
 
 	def checkCSRFCookie(self):
+		self.setCSRFCookie()
 		if request.method != 'POST':
 			return
 		cookie = request.cookies.get(self.cookieName, None)
